@@ -1,0 +1,1187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>IVT GLOBAL — UK Immigration Advisers</title>
+<meta name="description" content="UK visa and immigration advice for clients in Türkiye. Work, family, study, business and settlement. Istanbul and London.">
+<meta name="theme-color" content="#F4F5F1">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='50' fill='%2326362F'/%3E%3Ccircle cx='50' cy='50' r='42.5' fill='none' stroke='%23C7AC7E' stroke-opacity='.5' stroke-width='1'/%3E%3Ctext x='50.8' y='60.2' text-anchor='middle' font-family='Georgia,serif' font-size='29' letter-spacing='1.6' fill='%23C7AC7E'%3EIVT%3C/text%3E%3C/svg%3E">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="IVT GLOBAL">
+<meta property="og:title" content="IVT GLOBAL — UK Immigration Advisers">
+<meta property="og:description" content="UK visa and immigration advice for clients in Türkiye.">
+<meta property="og:locale" content="en_GB">
+<meta property="og:locale:alternate" content="tr_TR">
+
+<!--
+  ═════════════════════════════════════════════════════════
+  IVT GLOBAL — single-file website (English / Türkçe)
+  ---------------------------------------------------------
+  · Upload as index.html. No build step, no dependencies.
+  · Written mobile-first: the base CSS is the phone layout,
+    and min-width queries add tablet and desktop on top.
+  · All type and spacing comes from the scale in :root.
+    Change --fs-* or --s-* and the whole site rescales.
+  · Copy lives in the I18N object at the foot of the file.
+  · Search "EDIT:" for placeholders you must replace.
+  ═════════════════════════════════════════════════════════
+-->
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,300..600;1,6..72,300..500&family=Mulish:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+<style>
+/* ═══ SCALE ══════════════════════════════════════════════════
+   One type scale and one spacing scale. Every size on the site
+   is drawn from these, so nothing is off-grid.               */
+:root{
+  /* type — fluid between a 360px phone and a 1280px desktop */
+  --fs-micro: clamp(0.6875rem, 0.66rem + 0.12vw, 0.75rem);   /* 11 → 12 */
+  --fs-sm:    clamp(0.8125rem, 0.78rem + 0.16vw, 0.875rem);  /* 13 → 14 */
+  --fs-base:  clamp(1rem, 0.97rem + 0.13vw, 1.0625rem);      /* 16 → 17 */
+  --fs-md:    clamp(1.0625rem, 1rem + 0.30vw, 1.1875rem);    /* 17 → 19 */
+  --fs-lg:    clamp(1.1875rem, 1.11rem + 0.36vw, 1.375rem);  /* 19 → 22 */
+  --fs-xl:    clamp(1.375rem, 1.20rem + 0.85vw, 1.875rem);   /* 22 → 30 */
+  --fs-2xl:   clamp(1.75rem, 1.35rem + 1.90vw, 2.75rem);     /* 28 → 44 */
+  --fs-3xl:   clamp(2.25rem, 1.60rem + 3.10vw, 4.25rem);     /* 36 → 68 */
+
+  /* spacing */
+  --s-1:.25rem; --s-2:.5rem;  --s-3:.75rem; --s-4:1rem;
+  --s-5:1.5rem; --s-6:2rem;   --s-7:3rem;   --s-8:4rem;
+  --sec-y: clamp(3.5rem, 9vw, 6.5rem);
+  --gut:   clamp(1.25rem, 5vw, 3.5rem);
+  --wrap:  71.25rem; /* 1140px */
+
+  /* colour */
+  --forest:#26362F; --forest-2:#31463D;
+  --brass:#A98A55;        /* rules, borders, decoration */
+  --brass-text:#8A6D3B;   /* brass used as text — passes contrast */
+  --brass-2:#C7AC7E;      /* brass on dark */
+  --stone:#F4F5F1; --stone-2:#EAECE5; --card:#FCFCFA;
+  --text:#2A312D; --muted:#5D6762;
+  --line:#E1E4DC; --line-soft:rgba(255,255,255,.15);
+
+  --serif:'Newsreader',Georgia,serif;
+  --sans:'Mulish',system-ui,-apple-system,sans-serif;
+  --r:14px; --r-lg:20px; --tap:44px;
+  --ease:cubic-bezier(.25,.8,.35,1);
+  --shadow:0 14px 40px -30px rgba(38,54,47,.55);
+  --shadow-lg:0 26px 64px -40px rgba(38,54,47,.6);
+}
+
+/* ═══ BASE (mobile) ══════════════════════════════════════ */
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{
+  margin:0;background:var(--stone);color:var(--text);
+  font-family:var(--sans);font-size:var(--fs-base);font-weight:400;line-height:1.65;
+  -webkit-font-smoothing:antialiased;-webkit-tap-highlight-color:transparent;
+  overflow-x:hidden;overflow-wrap:break-word;
+  padding-bottom:calc(4.75rem + env(safe-area-inset-bottom)); /* clears the mobile action bar */
+}
+img{max-width:100%;display:block}
+a{color:inherit;text-decoration:none}
+button{font:inherit;color:inherit;cursor:pointer;-webkit-tap-highlight-color:transparent}
+p{margin:0}
+h1,h2,h3,h4{font-family:var(--serif);font-weight:400;margin:0;letter-spacing:-.015em;line-height:1.18;color:var(--forest)}
+h1{font-size:var(--fs-3xl);font-weight:300;line-height:1.08;letter-spacing:-.025em}
+h2{font-size:var(--fs-2xl);letter-spacing:-.022em}
+h3{font-size:var(--fs-lg)}
+em{font-style:italic;color:var(--brass-text)}
+:focus-visible{outline:2px solid var(--brass-text);outline-offset:3px;border-radius:6px}
+::selection{background:rgba(169,138,85,.24)}
+
+.wrap{width:100%;max-width:var(--wrap);margin-inline:auto;padding-inline:var(--gut)}
+.skip{position:absolute;left:-9999px;background:var(--forest);color:#fff;padding:var(--s-3) var(--s-5);z-index:300;border-radius:10px}
+.skip:focus{left:var(--s-3);top:var(--s-3)}
+.label{
+  font-size:var(--fs-micro);font-weight:600;letter-spacing:.18em;
+  text-transform:uppercase;color:var(--brass-text);
+}
+
+/* ── language switch — lives in the sticky header ── */
+.lang{
+  display:flex;align-items:center;gap:2px;flex-shrink:0;
+  border:1px solid var(--line);border-radius:100px;padding:2px;background:rgba(255,255,255,.55);
+}
+.lang button{
+  background:none;border:0;border-radius:100px;padding:.34rem .72rem;min-height:2rem;
+  font-size:var(--fs-micro);font-weight:600;letter-spacing:.1em;color:var(--muted);
+  transition:background .35s var(--ease),color .35s var(--ease);
+}
+.lang button[aria-pressed="true"]{background:var(--forest);color:#fff}
+
+/* ── nav ── */
+.nav{
+  position:sticky;top:0;z-index:100;background:rgba(244,245,241,.86);
+  backdrop-filter:blur(16px) saturate(1.2);-webkit-backdrop-filter:blur(16px) saturate(1.2);
+  transition:box-shadow .5s var(--ease),background .5s var(--ease);
+}
+.nav.scrolled{box-shadow:0 1px 26px rgba(38,54,47,.1);background:rgba(244,245,241,.95)}
+.nav-in{display:flex;align-items:center;justify-content:space-between;gap:var(--s-4);height:4.25rem}
+.brand{display:flex;align-items:center;gap:var(--s-3);min-width:0}
+.brand > span:last-child{display:flex;flex-direction:column;justify-content:center;gap:.1rem;min-width:0}
+.brand b{font-family:var(--serif);font-size:var(--fs-lg);font-weight:400;letter-spacing:.04em;display:block;line-height:1;color:var(--forest)}
+.brand small{font-size:var(--fs-micro);letter-spacing:.16em;text-transform:uppercase;color:var(--muted);font-weight:500;line-height:1}
+.crest{width:2.375rem;height:2.375rem;flex-shrink:0;display:block}
+.menu{display:none}
+.nav .btn{display:none}
+.nav-end{display:flex;align-items:center;gap:var(--s-2);flex-shrink:0}
+
+/* two strokes of unequal length, morphing to a close mark */
+.burger{
+  display:grid;place-items:center;background:none;border:0;padding:0;
+  width:var(--tap);height:var(--tap);position:relative;flex-shrink:0;
+}
+.burger i{
+  position:absolute;right:11px;height:1.25px;background:var(--forest);border-radius:2px;
+  transition:width .45s var(--ease),top .45s var(--ease),transform .45s var(--ease);
+}
+.burger i:nth-child(1){top:19px;width:22px}
+.burger i:nth-child(2){top:25px;width:14px}
+.burger[aria-expanded="true"] i:nth-child(1){top:22px;width:20px;transform:rotate(45deg)}
+.burger[aria-expanded="true"] i:nth-child(2){top:22px;width:20px;transform:rotate(-45deg)}
+
+/* scrim — the page dims and softens behind the sheet */
+.scrim{
+  position:fixed;inset:0;z-index:190;background:rgba(38,54,47,.36);
+  backdrop-filter:blur(3px);-webkit-backdrop-filter:blur(3px);
+  opacity:0;pointer-events:none;transition:opacity .45s var(--ease);
+}
+.scrim.on{opacity:1;pointer-events:auto}
+
+/* sheet — slides in from the right, light, not a full takeover */
+.drawer{
+  position:fixed;top:0;right:0;bottom:0;z-index:200;
+  width:min(86vw, 22.5rem);background:var(--card);border-left:1px solid var(--line);
+  box-shadow:-30px 0 70px -45px rgba(38,54,47,.65);
+  display:flex;flex-direction:column;overflow-y:auto;
+  padding:calc(var(--s-3) + env(safe-area-inset-top)) var(--s-5) calc(var(--s-5) + env(safe-area-inset-bottom));
+  transform:translateX(100%);visibility:hidden;
+  transition:transform .5s var(--ease),visibility .5s;
+}
+.drawer.open{transform:none;visibility:visible}
+.drawer-top{display:flex;align-items:center;justify-content:space-between;gap:var(--s-3);min-height:3.5rem}
+.drawer-close{position:relative;width:var(--tap);height:var(--tap);background:none;border:0;flex-shrink:0}
+.drawer-close::before,.drawer-close::after{
+  content:"";position:absolute;left:12px;top:21px;width:20px;height:1.25px;
+  background:var(--forest);border-radius:2px;
+}
+.drawer-close::before{transform:rotate(45deg)}
+.drawer-close::after{transform:rotate(-45deg)}
+.drawer-nav{display:flex;flex-direction:column;margin-top:var(--s-5)}
+.drawer-nav a{
+  font-family:var(--serif);font-size:var(--fs-lg);color:var(--forest);
+  padding:var(--s-4) 0;border-bottom:1px solid var(--line);
+  opacity:0;transform:translateX(14px);
+  transition:opacity .5s var(--ease),transform .5s var(--ease),color .3s var(--ease);
+}
+.drawer.open .drawer-nav a{opacity:1;transform:none}
+.drawer.open .drawer-nav a:nth-child(1){transition-delay:.10s}
+.drawer.open .drawer-nav a:nth-child(2){transition-delay:.15s}
+.drawer.open .drawer-nav a:nth-child(3){transition-delay:.20s}
+.drawer.open .drawer-nav a:nth-child(4){transition-delay:.25s}
+.drawer.open .drawer-nav a:nth-child(5){transition-delay:.30s}
+.drawer-foot{margin-top:auto;padding-top:var(--s-5);display:grid;gap:var(--s-4);justify-items:start}
+.drawer-foot .btn{width:100%}
+.drawer-tel{font-size:var(--fs-sm);color:var(--muted)}
+
+/* ── buttons ── */
+.btn{
+  display:inline-flex;align-items:center;justify-content:center;gap:var(--s-2);
+  min-height:var(--tap);padding:var(--s-3) var(--s-6);border-radius:100px;
+  border:1px solid transparent;font-size:var(--fs-sm);font-weight:600;
+  text-align:center;transition:transform .3s var(--ease),background .35s var(--ease),
+  color .35s var(--ease),border-color .35s var(--ease);
+}
+.btn:active{transform:scale(.98)}
+.btn-solid{background:var(--forest);color:#F7F8F4}
+.btn-solid:hover{background:var(--forest-2)}
+.btn-quiet{border-color:var(--line);color:var(--forest);background:rgba(255,255,255,.6)}
+.btn-quiet:hover{border-color:var(--brass);background:#fff}
+.btn-pale{background:rgba(255,255,255,.1);border-color:rgba(255,255,255,.32);color:#fff}
+.btn-pale:hover{background:#fff;color:var(--forest)}
+
+/* ── mobile action bar ── */
+.actionbar{
+  position:fixed;left:0;right:0;bottom:0;z-index:150;display:flex;gap:var(--s-2);
+  padding:var(--s-3) var(--gut) calc(var(--s-3) + env(safe-area-inset-bottom));
+  background:rgba(244,245,241,.94);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);
+  border-top:1px solid var(--line);
+}
+.actionbar .btn{flex:1;padding-inline:var(--s-4)}
+body.locked .actionbar{opacity:0;pointer-events:none}
+
+/* ── hero ── */
+.hero{position:relative;overflow:hidden;isolation:isolate}
+.hero::before{
+  content:"";position:absolute;inset:-25% -25% auto -25%;height:135%;z-index:-1;filter:blur(10px);
+  background:
+    radial-gradient(58% 46% at 78% 14%,rgba(169,138,85,.22),transparent 68%),
+    radial-gradient(62% 54% at 10% 78%,rgba(74,97,87,.20),transparent 66%),
+    radial-gradient(80% 60% at 50% 0%,rgba(255,255,255,.85),transparent 60%);
+}
+.hero-in{display:grid;gap:var(--s-7);padding-block:var(--s-8) var(--sec-y)}
+.hero .label{display:block;margin-bottom:var(--s-4)}
+.lede{margin-top:var(--s-5);font-size:var(--fs-md);color:var(--muted);font-weight:300;max-width:34ch}
+.hero-cta{display:flex;flex-direction:column;gap:var(--s-3);margin-top:var(--s-6)}
+.panel{
+  background:var(--card);border:1px solid var(--line);border-radius:var(--r-lg);
+  padding:var(--s-6) var(--s-5);box-shadow:var(--shadow-lg);
+}
+.panel .label{display:block;margin-bottom:var(--s-4)}
+.panel blockquote{
+  margin:0;font-family:var(--serif);font-size:var(--fs-xl);line-height:1.35;
+  color:var(--forest);font-weight:300;letter-spacing:-.015em;
+}
+.panel .by{margin-top:var(--s-5);padding-top:var(--s-4);border-top:1px solid var(--line);display:flex;align-items:center;gap:var(--s-3)}
+.panel .by b{font-family:var(--serif);font-size:var(--fs-md);font-weight:500;color:var(--forest);display:block;line-height:1.3}
+.panel .by span{font-size:var(--fs-sm);color:var(--muted)}
+
+/* ── sections ── */
+.sec{padding-block:var(--sec-y)}
+.sec--pale{background:linear-gradient(180deg,var(--stone),var(--stone-2))}
+.sec--white{background:var(--card)}
+.sec--deep{background:var(--forest);color:#D6DED9}
+.sec--deep h2,.sec--deep h3{color:#F4F6F1}
+.sec--deep .label{color:var(--brass-2)}
+.sec-hd{max-width:36ch;margin-bottom:var(--s-6)}
+.sec-hd.centre{margin-inline:auto;text-align:center}
+.sec-hd .label{display:block;margin-bottom:var(--s-3)}
+.sec-hd p{margin-top:var(--s-3);color:var(--muted);font-size:var(--fs-base);font-weight:300}
+.sec--deep .sec-hd p{color:#A3B2AA}
+.rv{opacity:0;transform:translateY(14px);transition:opacity .8s var(--ease),transform .8s var(--ease)}
+.rv.in{opacity:1;transform:none}
+
+/* ── practice areas — three groups, names as chips ── */
+.groups{display:grid;gap:var(--s-6)}
+.group-hd{display:flex;align-items:center;gap:var(--s-4);margin-bottom:var(--s-4)}
+.group-hd h3{font-size:var(--fs-lg);white-space:nowrap}
+.group-hd::after{content:"";flex:1;height:1px;background:var(--brass);opacity:.4}
+.chips{display:flex;flex-wrap:wrap;gap:var(--s-2)}
+.chip{
+  display:inline-flex;align-items:center;gap:var(--s-2);
+  min-height:var(--tap);padding:var(--s-2) var(--s-5);
+  background:var(--card);border:1px solid var(--line);border-radius:100px;
+  font-family:var(--serif);font-size:var(--fs-md);color:var(--forest);line-height:1.2;
+  transition:background .3s var(--ease),border-color .3s var(--ease),transform .3s var(--ease);
+}
+.chip::after{content:"→";font-family:var(--sans);font-size:var(--fs-sm);color:var(--brass-text);opacity:.75}
+.chip:active{transform:scale(.98);background:#F5F6F2}
+
+/* ── approach ── */
+.approach{display:grid;gap:var(--s-5)}
+.pillar{padding-top:var(--s-4);border-top:1px solid var(--line-soft)}
+.pillar h3{margin-bottom:var(--s-2)}
+.pillar p{color:#A3B2AA;font-size:var(--fs-sm);font-weight:300}
+
+/* ── process ── */
+.steps{display:grid;gap:var(--s-5)}
+.step{position:relative;padding-top:var(--s-6)}
+.step::before{content:"";position:absolute;top:9px;left:0;right:0;height:1px;background:var(--line)}
+.step::after{content:"";position:absolute;top:4px;left:0;width:10px;height:10px;border-radius:50%;
+  background:var(--stone);border:1.5px solid var(--brass)}
+.step .n{font-family:var(--serif);font-style:italic;font-size:var(--fs-sm);color:var(--brass-text);display:block;margin-bottom:var(--s-1)}
+.step h3{margin-bottom:var(--s-2)}
+.step p{color:var(--muted);font-size:var(--fs-sm);font-weight:300;line-height:1.5}
+
+/* ── guide ── */
+.guide{
+  background:var(--card);border:1px solid var(--line);border-radius:var(--r-lg);
+  overflow:hidden;display:grid;box-shadow:var(--shadow);
+}
+.guide-l{padding:var(--s-5);background:linear-gradient(170deg,var(--stone-2),var(--stone));border-bottom:1px solid var(--line)}
+.guide-r{padding:var(--s-5)}
+.guide h3{margin-bottom:var(--s-4)}
+.opts{display:grid;gap:var(--s-2)}
+.opt{
+  background:rgba(255,255,255,.75);border:1px solid var(--line);color:var(--text);
+  min-height:var(--tap);padding:var(--s-3) var(--s-4);border-radius:100px;text-align:left;
+  font-size:var(--fs-sm);width:100%;
+  transition:background .35s var(--ease),border-color .35s var(--ease),color .35s var(--ease);
+}
+.opt:hover{border-color:var(--brass);background:#fff}
+.opt[aria-pressed="true"]{background:var(--forest);border-color:var(--forest);color:#F4F6F1}
+.result h4{font-family:var(--serif);font-size:var(--fs-lg);margin-bottom:var(--s-4);font-weight:400}
+.result .label{display:block;margin-bottom:var(--s-3)}
+.result ul{list-style:none;margin:0;padding:0;display:grid;gap:var(--s-3)}
+.result li{color:var(--muted);font-size:var(--fs-sm);font-weight:300;padding-left:var(--s-5);position:relative;line-height:1.5}
+.result li::before{content:"";position:absolute;left:0;top:10px;width:11px;height:1px;background:var(--brass)}
+.result .foot{margin-top:var(--s-5);padding-top:var(--s-4);border-top:1px solid var(--line);color:var(--muted);font-size:var(--fs-micro);font-weight:300;line-height:1.6}
+.fade{animation:soft .5s var(--ease)}
+@keyframes soft{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
+
+/* ── fees ── */
+.plans{display:grid;gap:var(--s-3)}
+.plan{
+  background:var(--card);border:1px solid var(--line);border-radius:var(--r);
+  padding:var(--s-5);display:flex;flex-direction:column;
+  transition:transform .45s var(--ease),box-shadow .45s var(--ease);
+}
+.plan.feature{background:var(--forest);border-color:var(--forest)}
+.plan.feature h3,.plan.feature .price{color:#F4F6F1}
+.plan.feature li{color:#A3B2AA}
+.plan.feature .price sub{color:#8E9D95}
+.plan.feature li::before{background:var(--brass-2)}
+.plan.feature .label{color:var(--brass-2)}
+.plan .label{display:block;margin-bottom:var(--s-3)}
+.plan .price{font-family:var(--serif);font-size:var(--fs-xl);font-weight:300;color:var(--forest);margin:var(--s-3) 0 0;letter-spacing:-.02em}
+.plan .price sub{font-family:var(--sans);font-size:var(--fs-micro);font-weight:500;letter-spacing:.12em;
+  text-transform:uppercase;color:var(--muted);vertical-align:middle;margin-right:var(--s-2);bottom:0}
+.plan ul{list-style:none;margin:var(--s-4) 0 var(--s-5);padding:0;display:grid;gap:var(--s-2)}
+.plan li{font-size:var(--fs-sm);font-weight:300;color:var(--muted);padding-left:var(--s-5);position:relative}
+.plan li::before{content:"";position:absolute;left:0;top:10px;width:10px;height:1px;background:var(--brass)}
+.plan .btn{margin-top:auto;width:100%}
+
+/* ── quotes ── */
+.quotes{display:grid;gap:var(--s-3)}
+.quote{background:rgba(255,255,255,.6);border:1px solid var(--line);border-radius:var(--r);padding:var(--s-5)}
+.quote p{font-family:var(--serif);font-size:var(--fs-md);line-height:1.45;color:var(--forest);font-weight:300}
+.quote .who{margin-top:var(--s-4);padding-top:var(--s-3);border-top:1px solid var(--line);font-size:var(--fs-micro);color:var(--muted);letter-spacing:.04em}
+
+/* ── faq ── */
+.faq{max-width:52rem;margin-inline:auto}
+.qa{border-bottom:1px solid var(--line)}
+.qa:first-child{border-top:1px solid var(--line)}
+.qa summary{list-style:none;cursor:pointer}
+.qa summary::-webkit-details-marker{display:none}
+.qa .q{
+  display:block;padding:var(--s-5) var(--s-7) var(--s-5) 0;
+  font-family:var(--serif);font-size:var(--fs-lg);color:var(--forest);
+  position:relative;min-height:var(--tap);transition:color .3s var(--ease);
+}
+.qa .q::after{
+  content:"";position:absolute;right:6px;top:50%;width:9px;height:9px;
+  border-right:1.5px solid var(--brass-text);border-bottom:1.5px solid var(--brass-text);
+  transform:translateY(-70%) rotate(45deg);transition:transform .4s var(--ease);
+}
+.qa[open] .q::after{transform:translateY(-30%) rotate(-135deg)}
+.qa .ans{padding:0 var(--s-6) var(--s-5) 0;color:var(--muted);font-size:var(--fs-sm);font-weight:300;line-height:1.6;animation:soft .45s var(--ease)}
+
+/* ── contact ── */
+.contact{display:grid;gap:var(--s-6)}
+.form-card{background:var(--card);border:1px solid var(--line);border-radius:var(--r-lg);padding:var(--s-5);box-shadow:var(--shadow)}
+.f-row{display:grid;gap:0}
+.f{margin-bottom:var(--s-4)}
+.f label{display:block;font-size:var(--fs-sm);font-weight:600;letter-spacing:.03em;color:var(--muted);margin-bottom:var(--s-2)}
+.f input,.f select,.f textarea{
+  width:100%;background:var(--stone);border:1px solid var(--line);border-radius:12px;
+  padding:var(--s-3) var(--s-4);min-height:var(--tap);
+  font-family:var(--sans);font-size:1rem;font-weight:300;color:var(--text); /* 16px stops iOS zooming */
+  transition:border-color .3s var(--ease),background .3s var(--ease),box-shadow .3s var(--ease);
+}
+.f textarea{min-height:6.5rem;resize:vertical;line-height:1.6}
+.f select{appearance:none;background-image:linear-gradient(45deg,transparent 50%,var(--muted) 50%),
+  linear-gradient(135deg,var(--muted) 50%,transparent 50%);
+  background-position:calc(100% - 20px) 50%,calc(100% - 15px) 50%;background-size:5px 5px;background-repeat:no-repeat}
+.f input:focus,.f select:focus,.f textarea:focus{outline:none;border-color:var(--brass);background:#fff;box-shadow:0 0 0 4px rgba(169,138,85,.12)}
+.f input::placeholder,.f textarea::placeholder{color:#9AA29D}
+.consent{display:flex;gap:var(--s-3);align-items:flex-start;margin-bottom:var(--s-5);color:var(--muted);font-size:var(--fs-sm);font-weight:300;line-height:1.5}
+.consent input{width:1.15rem;height:1.15rem;margin-top:.2rem;accent-color:var(--forest);flex-shrink:0}
+.form-card .btn{width:100%}
+.sent{border-radius:12px;padding:var(--s-3) var(--s-4);font-size:var(--fs-sm);font-weight:300;margin-top:var(--s-4);animation:soft .45s var(--ease)}
+.office{padding:var(--s-5) 0;border-bottom:1px solid var(--line)}
+.office:first-of-type{border-top:1px solid var(--line)}
+.office-hd{display:flex;justify-content:space-between;align-items:baseline;gap:var(--s-4)}
+.office h3{font-size:var(--fs-md)}
+.office .time{font-size:var(--fs-sm);color:var(--brass-text);font-weight:500;font-variant-numeric:tabular-nums}
+.office p{color:var(--muted);font-size:var(--fs-sm);font-weight:300;margin-top:var(--s-2)}
+.office a{color:var(--forest);border-bottom:1px solid rgba(169,138,85,.55);display:inline-block;padding-block:2px}
+
+/* ── footer ── */
+footer{background:var(--forest);color:#93A299;padding-block:var(--s-7) var(--s-5)}
+.f-top{display:grid;gap:var(--s-6);padding-bottom:var(--s-6);border-bottom:1px solid var(--line-soft)}
+.f-top h4{font-family:var(--sans);font-size:var(--fs-micro);font-weight:600;letter-spacing:.18em;
+  text-transform:uppercase;color:var(--brass-2);margin-bottom:var(--s-3)}
+.f-top ul{list-style:none;margin:0;padding:0;display:grid;gap:var(--s-2)}
+.f-top a{font-size:var(--fs-sm);font-weight:300;display:inline-block;padding-block:var(--s-1)}
+.f-top a:hover{color:#F4F6F1}
+.f-brand .brand b{color:#F4F6F1}
+.f-brand .brand small{color:#8A998F}
+.f-brand p{font-size:var(--fs-sm);font-weight:300;margin-top:var(--s-4);max-width:30ch}
+.notice{margin-top:var(--s-5);font-size:var(--fs-micro);font-weight:300;line-height:1.7;color:#84938A;max-width:75ch}
+.f-bot{display:grid;gap:var(--s-2);padding-top:var(--s-5);font-size:var(--fs-micro);color:#7B8A81;font-weight:300}
+
+/* ═══ ≥ 600px — small tablet ═══════════════════════════ */
+@media (min-width:37.5rem){
+  .hero-cta{flex-direction:row}
+  .hero-cta .btn{flex:0 1 auto}
+  .plans,.quotes{grid-template-columns:repeat(2,1fr)}
+  .steps{grid-template-columns:repeat(2,1fr);gap:var(--s-6) var(--s-5)}
+  .f-row{grid-template-columns:1fr 1fr;gap:var(--s-4)}
+  .f-top{grid-template-columns:1fr 1fr}
+  .form-card .btn{width:auto;min-width:12rem}
+  .f-bot{grid-template-columns:1fr auto}
+}
+
+/* ═══ ≥ 900px — desktop ════════════════════════════════ */
+@media (min-width:56.25rem){
+  body{padding-bottom:0}
+  .actionbar{display:none}
+  .burger{display:none}
+  .drawer,.scrim{display:none}
+  .menu{display:flex;gap:var(--s-6);align-items:center}
+  .menu a{font-size:var(--fs-sm);opacity:.85;transition:opacity .3s var(--ease),color .3s var(--ease)}
+  .menu a:hover{opacity:1;color:var(--forest);text-decoration:underline;text-underline-offset:6px;
+    text-decoration-color:var(--brass);text-decoration-thickness:1px}
+  .nav .btn{display:inline-flex}
+  .nav-end{gap:var(--s-4)}
+  .nav-in{height:5.25rem}
+  .crest{width:2.75rem;height:2.75rem}
+  .btn:hover{transform:translateY(-2px)}
+  .chip:hover{background:#fff;border-color:var(--brass);transform:translateY(-2px)}
+  .plan:hover{transform:translateY(-4px);box-shadow:var(--shadow)}
+  .step:hover::after{background:var(--brass)}
+  .qa .q:hover{color:var(--brass-text)}
+
+  .hero-in{grid-template-columns:1.08fr .92fr;gap:var(--s-8);align-items:center;padding-block:var(--sec-y)}
+  .panel{padding:var(--s-7) var(--s-6)}
+  .plans,.quotes{grid-template-columns:repeat(3,1fr)}
+  .groups{grid-template-columns:repeat(3,1fr);gap:var(--s-7)}
+  .approach{grid-template-columns:repeat(3,1fr);gap:var(--s-6)}
+  .steps{grid-template-columns:repeat(4,1fr);gap:var(--s-5)}
+  .guide{grid-template-columns:.8fr 1.2fr}
+  .guide-l{border-bottom:0;border-right:1px solid var(--line);padding:var(--s-6)}
+  .guide-r{padding:var(--s-6)}
+  .contact{grid-template-columns:1.05fr .95fr;gap:var(--s-8);align-items:start}
+  .form-card{padding:var(--s-6)}
+  .f-top{grid-template-columns:1.7fr 1fr 1fr;gap:var(--s-7)}
+  .sec-hd{max-width:42ch}
+}
+
+/* ═══ ≥ 1200px ═════════════════════════════════════════ */
+@media (min-width:75rem){
+  .sec{padding-block:calc(var(--sec-y) * 1.1)}
+}
+
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation-duration:.001ms!important;transition-duration:.001ms!important;scroll-behavior:auto!important}
+  .rv{opacity:1;transform:none}
+}
+</style>
+</head>
+<body>
+<!-- ═══ LOGO ═══════════════════════════════════════════════
+     Defined once here, reused everywhere via <use>. Edit it in
+     this one place and it updates across the whole site.
+     Centring is geometric: the baseline sits at 50 + half the
+     cap height, so the letters are optically centred in the
+     circle regardless of which font renders.               -->
+<svg width="0" height="0" aria-hidden="true" focusable="false" style="position:absolute">
+  <defs>
+    <linearGradient id="crestFill" x1="0" y1="0" x2=".85" y2="1">
+      <stop offset="0" stop-color="#354C42"/>
+      <stop offset="1" stop-color="#23322B"/>
+    </linearGradient>
+  </defs>
+  <symbol id="crestMark" viewBox="0 0 100 100">
+    <circle cx="50" cy="50" r="49.4" fill="url(#crestFill)" stroke="#C7AC7E" stroke-opacity=".22" stroke-width="1.2"/>
+    <circle cx="50" cy="50" r="42.5" fill="none" stroke="#C7AC7E" stroke-opacity=".45" stroke-width="1"/>
+    <text x="50.8" y="60.2" text-anchor="middle" font-family="Newsreader, Georgia, 'Times New Roman', serif"
+          font-size="29" letter-spacing="1.6" fill="#C7AC7E">IVT</text>
+  </symbol>
+</svg>
+<a class="skip" href="#main" data-i18n="skip">Skip to content</a>
+
+<header class="nav" id="nav">
+  <div class="wrap nav-in">
+    <a class="brand" href="#top">
+      <svg class="crest" aria-hidden="true" focusable="false"><use href="#crestMark"/></svg>
+      <span><b>IVT GLOBAL</b><small data-i18n="brandSub">UK Immigration</small></span>
+    </a>
+    <nav class="menu" aria-label="Primary">
+      <a href="#areas" data-i18n="navAreas">Services</a>
+      <a href="#process" data-i18n="navProcess">How we work</a>
+      <a href="#fees" data-i18n="navFees">Fees</a>
+      <a href="#faq" data-i18n="navFaq">Questions</a>
+    </nav>
+    <div class="nav-end">
+      <div class="lang" role="group" aria-label="Language / Dil">
+        <button type="button" data-lang="en" aria-pressed="true">EN</button>
+        <button type="button" data-lang="tr" aria-pressed="false">TR</button>
+      </div>
+      <a class="btn btn-solid" href="#contact" data-i18n="ctaConsult">Book a consultation</a>
+      <button class="burger" id="burger" aria-expanded="false" aria-controls="drawer" aria-label="Menu"><i></i><i></i></button>
+    </div>
+  </div>
+</header>
+
+<div class="scrim" id="scrim"></div>
+
+<aside class="drawer" id="drawer" aria-label="Menu">
+  <div class="drawer-top">
+    <span class="brand">
+      <svg class="crest" aria-hidden="true" focusable="false"><use href="#crestMark"/></svg>
+      <span><b>IVT GLOBAL</b></span>
+    </span>
+    <button class="drawer-close" id="drawerClose" aria-label="Close menu"></button>
+  </div>
+  <nav class="drawer-nav">
+    <a href="#areas" data-i18n="navAreas">Services</a>
+    <a href="#process" data-i18n="navProcess">How we work</a>
+    <a href="#fees" data-i18n="navFees">Fees</a>
+    <a href="#faq" data-i18n="navFaq">Questions</a>
+    <a href="#contact" data-i18n="navContact">Contact</a>
+  </nav>
+  <div class="drawer-foot">
+    <!-- EDIT: phone number -->
+    <a class="drawer-tel" href="tel:+900000000000">+90 000 000 00 00</a>
+    <a class="btn btn-solid" href="#contact" data-i18n="ctaConsult">Book a consultation</a>
+  </div>
+</aside>
+
+<main id="main">
+<section class="hero" id="top">
+  <div class="wrap hero-in">
+    <div>
+      <span class="label" data-i18n="heroLabel">Türkiye · United Kingdom</span>
+      <h1><span data-i18n="heroT1">UK visas,</span><br><em data-i18n="heroT2">properly prepared.</em></h1>
+      <p class="lede" data-i18n="heroLede">Immigration advice for clients in Türkiye, in Turkish and English.</p>
+      <div class="hero-cta">
+        <a class="btn btn-solid" href="#contact" data-i18n="heroCta1">Book a consultation</a>
+        <a class="btn btn-quiet" href="#areas" data-i18n="heroCta2">See services</a>
+      </div>
+    </div>
+    <aside class="panel">
+      <span class="label" data-i18n="panelLabel">Our principle</span>
+      <blockquote data-i18n="panelQuote">“A visa is won before it is submitted.”</blockquote>
+      <div class="by">
+        <svg class="crest" aria-hidden="true" focusable="false"><use href="#crestMark"/></svg>
+        <!-- EDIT: your principal adviser -->
+        <span><b data-i18n="panelName">IVT GLOBAL</b><span data-i18n="panelRole">Istanbul &amp; London</span></span>
+      </div>
+    </aside>
+  </div>
+</section>
+
+<section class="sec sec--white" id="areas">
+  <div class="wrap">
+    <div class="sec-hd rv">
+      <span class="label" data-i18n="lblAreas">Services</span>
+      <h2 data-i18n="areasH">What we handle</h2>
+    </div>
+    <div class="groups rv">
+      <div class="group">
+        <div class="group-hd"><h3 data-i18n="grp1">Work &amp; business</h3></div>
+        <div class="chips">
+          <a class="chip" href="#contact" data-i18n="a1h">Skilled Worker</a>
+          <a class="chip" href="#contact" data-i18n="a2h">Sponsor licences</a>
+          <a class="chip" href="#contact" data-i18n="a6h">Global Talent</a>
+          <a class="chip" href="#contact" data-i18n="a7h">Innovator Founder</a>
+        </div>
+      </div>
+      <div class="group">
+        <div class="group-hd"><h3 data-i18n="grp2">Family &amp; study</h3></div>
+        <div class="chips">
+          <a class="chip" href="#contact" data-i18n="a3h">Spouse &amp; family</a>
+          <a class="chip" href="#contact" data-i18n="a4h">Student</a>
+          <a class="chip" href="#contact" data-i18n="a5h">Visitor</a>
+        </div>
+      </div>
+      <div class="group">
+        <div class="group-hd"><h3 data-i18n="grp3">Staying in the UK</h3></div>
+        <div class="chips">
+          <a class="chip" href="#contact" data-i18n="a8h">Ankara Agreement</a>
+          <a class="chip" href="#contact" data-i18n="a9h">Settlement &amp; citizenship</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="sec sec--deep">
+  <div class="wrap">
+    <div class="sec-hd rv">
+      <span class="label" data-i18n="lblApproach">Our approach</span>
+      <h2 data-i18n="appH">Three promises</h2>
+    </div>
+    <div class="approach rv">
+      <div class="pillar"><h3 data-i18n="c1h">Checked twice</h3><p data-i18n="c1p">A second adviser reviews every file before it is submitted.</p></div>
+      <div class="pillar"><h3 data-i18n="c2h">Honest first</h3><p data-i18n="c2p">We show you the weak points in your case, not just the strong ones.</p></div>
+      <div class="pillar"><h3 data-i18n="c3h">Fixed fees</h3><p data-i18n="c3p">Agreed in writing before we begin. Home Office fees shown separately.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="sec sec--pale" id="process">
+  <div class="wrap">
+    <div class="sec-hd rv">
+      <span class="label" data-i18n="lblProcess">How we work</span>
+      <h2 data-i18n="procH">Four stages</h2>
+    </div>
+    <div class="steps rv">
+      <div class="step"><span class="n" data-i18n="p1n">One</span><h3 data-i18n="p1h">Consultation</h3><p data-i18n="p1p">We find the route that fits.</p></div>
+      <div class="step"><span class="n" data-i18n="p2n">Two</span><h3 data-i18n="p2h">Documents</h3><p data-i18n="p2p">A list written for your case, translations included.</p></div>
+      <div class="step"><span class="n" data-i18n="p3n">Three</span><h3 data-i18n="p3h">Preparation</h3><p data-i18n="p3p">We draft the application and review it.</p></div>
+      <div class="step"><span class="n" data-i18n="p4n">Four</span><h3 data-i18n="p4h">Submission</h3><p data-i18n="p4p">We submit and stay with you to the decision.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="sec">
+  <div class="wrap">
+    <div class="sec-hd rv">
+      <span class="label" data-i18n="lblGuide">Quick guide</span>
+      <h2 data-i18n="gH">What your route requires</h2>
+    </div>
+    <div class="guide rv">
+      <div class="guide-l">
+        <h3 data-i18n="gPick">Select a route</h3>
+        <div class="opts" id="opts">
+          <button class="opt" type="button" data-key="sw" aria-pressed="true" data-i18n="o1">Skilled Worker</button>
+          <button class="opt" type="button" data-key="fam" aria-pressed="false" data-i18n="o2">Spouse or partner</button>
+          <button class="opt" type="button" data-key="stu" aria-pressed="false" data-i18n="o3">Student</button>
+          <button class="opt" type="button" data-key="vis" aria-pressed="false" data-i18n="o4">Visitor</button>
+        </div>
+      </div>
+      <div class="guide-r"><div class="result" id="result"></div></div>
+    </div>
+  </div>
+</section>
+
+<section class="sec sec--white" id="fees">
+  <div class="wrap">
+    <div class="sec-hd rv">
+      <span class="label" data-i18n="lblFees">Fees</span>
+      <h2 data-i18n="feesH">Our fees</h2>
+      <p data-i18n="feesP">Home Office fees, the health surcharge and translations are separate.</p>
+    </div>
+    <div class="plans rv">
+      <!-- EDIT: prices -->
+      <div class="plan">
+        <span class="label" data-i18n="pl1k">Advice</span>
+        <h3 data-i18n="pl1h">Consultation</h3>
+        <div class="price"><sub data-i18n="from">from</sub>£150</div>
+        <ul><li data-i18n="pl1a">One hour, Turkish or English</li><li data-i18n="pl1b">Written recommendation</li><li data-i18n="pl1c">Credited against a full application</li></ul>
+        <a class="btn btn-quiet" href="#contact" data-i18n="plBook">Book</a>
+      </div>
+      <div class="plan feature">
+        <span class="label" data-i18n="pl2k">Most chosen</span>
+        <h3 data-i18n="pl2h">Full application</h3>
+        <div class="price"><sub data-i18n="from">from</sub>£1,200</div>
+        <ul><li data-i18n="pl2a">Complete evidence bundle</li><li data-i18n="pl2b">Legal representations</li><li data-i18n="pl2c">Second-adviser review</li><li data-i18n="pl2d">Submission and interview prep</li></ul>
+        <a class="btn btn-pale" href="#contact" data-i18n="plStart">Begin</a>
+      </div>
+      <div class="plan">
+        <span class="label" data-i18n="pl3k">Business</span>
+        <h3 data-i18n="pl3h">Sponsor licence</h3>
+        <div class="price"><sub data-i18n="from">from</sub>£2,500</div>
+        <ul><li data-i18n="pl3a">Licence application</li><li data-i18n="pl3b">HR compliance systems</li><li data-i18n="pl3c">Mock audit</li></ul>
+        <a class="btn btn-quiet" href="#contact" data-i18n="plTalk">Enquire</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="sec sec--pale">
+  <div class="wrap">
+    <div class="sec-hd centre rv">
+      <span class="label" data-i18n="lblVoices">Clients</span>
+      <h2 data-i18n="voicesH">In their words</h2>
+    </div>
+    <!-- EDIT: replace with real, consented feedback -->
+    <div class="quotes rv">
+      <div class="quote"><p data-i18n="q1">“They spotted a problem with my job code before we applied. That saved my application.”</p><div class="who" data-i18n="q1w">E.D. · Nurse · Ankara</div></div>
+      <div class="quote"><p data-i18n="q2">“I was refused once alone. The second time everything was explained in Turkish.”</p><div class="who" data-i18n="q2w">M.K. · Spouse visa · Izmir</div></div>
+      <div class="quote"><p data-i18n="q3">“We got our sponsor licence without a single request for more information.”</p><div class="who" data-i18n="q3w">Logistics company · Istanbul</div></div>
+    </div>
+  </div>
+</section>
+
+<section class="sec sec--white" id="faq">
+  <div class="wrap">
+    <div class="sec-hd centre rv">
+      <span class="label" data-i18n="lblFaq">Questions</span>
+      <h2 data-i18n="faqH">Before you call</h2>
+    </div>
+    <div class="faq rv">
+      <details class="qa"><summary><span class="q" data-i18n="f1q">Can you guarantee approval?</span></summary><div class="ans" data-i18n="f1a">No, and nobody can — the decision is the Home Office's. If we think a case will fail, we tell you before you instruct us.</div></details>
+      <details class="qa"><summary><span class="q" data-i18n="f2q">Do I need to travel to the UK?</span></summary><div class="ans" data-i18n="f2a">No. Everything is done by video call and secure upload. You attend only your biometrics appointment in Türkiye.</div></details>
+      <details class="qa"><summary><span class="q" data-i18n="f3q">I was refused before. Can I reapply?</span></summary><div class="ans" data-i18n="f3a">Usually yes, once we have read the refusal notice. Most refusals turn on evidence and can be put right.</div></details>
+      <details class="qa"><summary><span class="q" data-i18n="f4q">Is the Ankara Agreement still open?</span></summary><div class="ans" data-i18n="f4a">Not to new applicants. If you already hold ECAA leave, extensions and settlement remain available.</div></details>
+      <details class="qa"><summary><span class="q" data-i18n="f5q">How long does it take?</span></summary><div class="ans" data-i18n="f5a">It depends on the route, and Home Office timescales change often. We give you the current figure at your consultation.</div></details>
+    </div>
+  </div>
+</section>
+
+<section class="sec" id="contact">
+  <div class="wrap">
+    <div class="sec-hd rv">
+      <span class="label" data-i18n="lblContact">Contact</span>
+      <h2 data-i18n="conH">Tell us your situation</h2>
+      <p data-i18n="conP">We reply within one working day.</p>
+    </div>
+    <div class="contact rv">
+      <form class="form-card" id="form" novalidate>
+        <div class="f-row">
+          <div class="f"><label for="n" data-i18n="lName">Name</label><input id="n" name="name" autocomplete="name" data-ph="phName" placeholder="Ad Soyad"></div>
+          <div class="f"><label for="e" data-i18n="lEmail">Email</label><input id="e" name="email" type="email" inputmode="email" autocomplete="email" placeholder="you@email.com"></div>
+        </div>
+        <div class="f-row">
+          <div class="f"><label for="t" data-i18n="lPhone">Phone / WhatsApp</label><input id="t" name="phone" type="tel" inputmode="tel" autocomplete="tel" placeholder="+90 5xx xxx xx xx"></div>
+          <div class="f"><label for="r" data-i18n="lRoute">Route</label>
+            <select id="r" name="route">
+              <option data-i18n="selPick">Not sure yet</option>
+              <option data-i18n="a1h">Skilled Worker</option>
+              <option data-i18n="a2h">Sponsor licences</option>
+              <option data-i18n="a3h">Spouse &amp; family</option>
+              <option data-i18n="a4h">Student</option>
+              <option data-i18n="a5h">Visitor</option>
+              <option data-i18n="a6h">Global Talent</option>
+              <option data-i18n="a7h">Innovator Founder</option>
+              <option data-i18n="a8h">Ankara Agreement</option>
+              <option data-i18n="a9h">Settlement &amp; citizenship</option>
+            </select>
+          </div>
+        </div>
+        <div class="f"><label for="m" data-i18n="lMsg">Your situation</label><textarea id="m" name="message" data-ph="phMsg" placeholder="Previous applications, refusals, deadlines."></textarea></div>
+        <label class="consent"><input type="checkbox" id="c"><span data-i18n="lConsent">IVT GLOBAL may contact me about this enquiry.</span></label>
+        <button class="btn btn-solid" type="submit" data-i18n="btnSend">Send</button>
+        <div id="sent" hidden></div>
+      </form>
+
+      <div>
+        <div class="office">
+          <div class="office-hd"><h3 data-i18n="offIst">Istanbul</h3><span class="time" id="clkIst">—</span></div>
+          <!-- EDIT: address, phone, email -->
+          <p>Levent, Büyükdere Cd. No: 000, Şişli</p>
+          <p><a href="tel:+900000000000">+90 000 000 00 00</a> · <a href="mailto:istanbul@ivtglobal.com">istanbul@ivtglobal.com</a></p>
+        </div>
+        <div class="office">
+          <div class="office-hd"><h3 data-i18n="offLon">London</h3><span class="time" id="clkLon">—</span></div>
+          <p>00 Example Street, London EC0X 0AA</p>
+          <p><a href="tel:+440000000000">+44 (0)00 0000 0000</a> · <a href="mailto:london@ivtglobal.com">london@ivtglobal.com</a></p>
+        </div>
+        <div class="office" style="border-bottom:0">
+          <div class="office-hd"><h3 data-i18n="offHours">Hours</h3></div>
+          <p data-i18n="offHoursV">Monday to Friday, 09.00–18.00 (TRT).</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="f-top">
+      <div class="f-brand">
+        <span class="brand"><svg class="crest" aria-hidden="true" focusable="false"><use href="#crestMark"/></svg><span><b>IVT GLOBAL</b><small data-i18n="brandSub">UK Immigration</small></span></span>
+        <p data-i18n="fBrandP">UK immigration advice for clients in Türkiye.</p>
+      </div>
+      <div><h4 data-i18n="fCol1">Services</h4><ul>
+        <li><a href="#areas" data-i18n="a1h">Skilled Worker</a></li>
+        <li><a href="#areas" data-i18n="a3h">Spouse &amp; family</a></li>
+        <li><a href="#areas" data-i18n="a4h">Student</a></li>
+        <li><a href="#areas" data-i18n="a9h">Settlement &amp; citizenship</a></li>
+      </ul></div>
+      <div><h4 data-i18n="fCol3">Legal</h4><ul>
+        <li><a href="#" data-i18n="fPrivacy">Privacy notice</a></li>
+        <li><a href="#" data-i18n="fTerms">Terms of business</a></li>
+        <li><a href="#" data-i18n="fComplaints">Complaints</a></li>
+      </ul></div>
+    </div>
+    <!-- EDIT: insert your real regulator and registration number -->
+    <p class="notice" data-i18n="notice">Regulated by the OISC, registration number [INSERT NUMBER]. Nothing here is advice on your individual case, and no outcome can be guaranteed.</p>
+    <div class="f-bot">
+      <span>© <span id="yr">2026</span> IVT GLOBAL LTD</span>
+      <span>İstanbul · London</span>
+    </div>
+  </div>
+</footer>
+
+<!-- mobile action bar — EDIT: WhatsApp number -->
+<div class="actionbar">
+  <a class="btn btn-quiet" href="https://wa.me/900000000000" data-i18n="barWhats">WhatsApp</a>
+  <a class="btn btn-solid" href="#contact" data-i18n="barBook">Book a consultation</a>
+</div>
+
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"ProfessionalService","name":"IVT GLOBAL","description":"UK immigration advisers for clients in Türkiye.","areaServed":["TR","GB"],"availableLanguage":["tr","en"],"address":[{"@type":"PostalAddress","addressLocality":"Istanbul","addressCountry":"TR"},{"@type":"PostalAddress","addressLocality":"London","addressCountry":"GB"}]}
+</script>
+
+<script>
+(function(){
+"use strict";
+
+/* ═══ COPY ═══════════════════════════════════════════════ */
+const I18N = {
+en:{
+ skip:"Skip to content", topNote:"Istanbul · London", brandSub:"UK Immigration",
+ navAreas:"Services", navProcess:"How we work", navFees:"Fees", navFaq:"Questions", navContact:"Contact",
+ ctaConsult:"Book a consultation", barWhats:"WhatsApp", barBook:"Book a consultation",
+
+ heroLabel:"Türkiye · United Kingdom",
+ heroT1:"UK visas,", heroT2:"properly prepared.",
+ heroLede:"Immigration advice for clients in Türkiye, in Turkish and English.",
+ heroCta1:"Book a consultation", heroCta2:"See services",
+ panelLabel:"Our principle", panelQuote:"“A visa is won before it is submitted.”",
+ panelName:"IVT GLOBAL", panelRole:"Istanbul & London",
+
+ lblAreas:"Services", areasH:"What we handle",
+ grp1:"Work & business", grp2:"Family & study", grp3:"Staying in the UK",
+ a1h:"Skilled Worker", a1p:"Sponsored work, including health and care.",
+ a2h:"Sponsor licences", a2p:"For employers hiring from Türkiye.",
+ a3h:"Spouse & family", a3p:"Partners, fiancé(e)s, children and parents.",
+ a4h:"Student", a4p:"Study visas and the Graduate route.",
+ a5h:"Visitor", a5p:"Tourism, family visits and business trips.",
+ a6h:"Global Talent", a6p:"Endorsement for exceptional careers.",
+ a7h:"Innovator Founder", a7p:"For founders bringing a venture to the UK.",
+ a8h:"Ankara Agreement", a8p:"Extensions and settlement for ECAA holders.",
+ a9h:"Settlement & citizenship", a9p:"Indefinite leave and naturalisation.",
+
+ lblApproach:"Our approach", appH:"Three promises",
+ c1h:"Checked twice", c1p:"A second adviser reviews every file before it is submitted.",
+ c2h:"Honest first", c2p:"We show you the weak points in your case, not just the strong ones.",
+ c3h:"Fixed fees", c3p:"Agreed in writing before we begin. Home Office fees shown separately.",
+
+ lblProcess:"How we work", procH:"Four stages",
+ p1n:"One", p1h:"Consultation", p1p:"We find the route that fits.",
+ p2n:"Two", p2h:"Documents", p2p:"A list written for your case, translations included.",
+ p3n:"Three", p3h:"Preparation", p3p:"We draft the application and review it.",
+ p4n:"Four", p4h:"Submission", p4p:"We submit and stay with you to the decision.",
+
+ lblGuide:"Quick guide", gH:"What your route requires", gPick:"Select a route",
+ o1:"Skilled Worker", o2:"Spouse or partner", o3:"Student", o4:"Visitor",
+ gWhat:"Key requirements", gFoot:"General guidance only. Every case is assessed on its own facts.",
+
+ lblFees:"Fees", feesH:"Our fees",
+ feesP:"Home Office fees, the health surcharge and translations are separate.",
+ from:"from",
+ pl1k:"Advice", pl1h:"Consultation",
+ pl1a:"One hour, Turkish or English", pl1b:"Written recommendation", pl1c:"Credited against a full application",
+ pl2k:"Most chosen", pl2h:"Full application",
+ pl2a:"Complete evidence bundle", pl2b:"Legal representations", pl2c:"Second-adviser review", pl2d:"Submission and interview prep",
+ pl3k:"Business", pl3h:"Sponsor licence",
+ pl3a:"Licence application", pl3b:"HR compliance systems", pl3c:"Mock audit",
+ plBook:"Book", plStart:"Begin", plTalk:"Enquire",
+
+ lblVoices:"Clients", voicesH:"In their words",
+ q1:"“They spotted a problem with my job code before we applied. That saved my application.”", q1w:"E.D. · Nurse · Ankara",
+ q2:"“I was refused once alone. The second time everything was explained in Turkish.”", q2w:"M.K. · Spouse visa · Izmir",
+ q3:"“We got our sponsor licence without a single request for more information.”", q3w:"Logistics company · Istanbul",
+
+ lblFaq:"Questions", faqH:"Before you call",
+ f1q:"Can you guarantee approval?", f1a:"No, and nobody can — the decision is the Home Office's. If we think a case will fail, we tell you before you instruct us.",
+ f2q:"Do I need to travel to the UK?", f2a:"No. Everything is done by video call and secure upload. You attend only your biometrics appointment in Türkiye.",
+ f3q:"I was refused before. Can I reapply?", f3a:"Usually yes, once we have read the refusal notice. Most refusals turn on evidence and can be put right.",
+ f4q:"Is the Ankara Agreement still open?", f4a:"Not to new applicants. If you already hold ECAA leave, extensions and settlement remain available.",
+ f5q:"How long does it take?", f5a:"It depends on the route, and Home Office timescales change often. We give you the current figure at your consultation.",
+
+ lblContact:"Contact", conH:"Tell us your situation", conP:"We reply within one working day.",
+ lName:"Name", phName:"Ad Soyad", lEmail:"Email", lPhone:"Phone / WhatsApp",
+ lRoute:"Route", selPick:"Not sure yet", lMsg:"Your situation",
+ phMsg:"Previous applications, refusals, deadlines.",
+ lConsent:"IVT GLOBAL may contact me about this enquiry.",
+ btnSend:"Send",
+ okSent:"Thank you — we will reply within one working day.",
+ errFill:"Please add your name, a valid email and your consent.",
+ offIst:"Istanbul", offLon:"London", offHours:"Hours",
+ offHoursV:"Monday to Friday, 09.00–18.00 (TRT).",
+
+ fBrandP:"UK immigration advice for clients in Türkiye.",
+ fCol1:"Services", fCol3:"Legal",
+ fPrivacy:"Privacy notice", fTerms:"Terms of business", fComplaints:"Complaints",
+ notice:"Regulated by the OISC, registration number [INSERT NUMBER]. Nothing here is advice on your individual case, and no outcome can be guaranteed.",
+ title:"IVT GLOBAL — UK Immigration Advisers",
+ desc:"UK visa and immigration advice for clients in Türkiye. Work, family, study, business and settlement."
+},
+tr:{
+ skip:"İçeriğe geç", topNote:"İstanbul · Londra", brandSub:"BK Göçmenlik",
+ navAreas:"Hizmetler", navProcess:"Nasıl çalışırız", navFees:"Ücretler", navFaq:"Sorular", navContact:"İletişim",
+ ctaConsult:"Görüşme alın", barWhats:"WhatsApp", barBook:"Görüşme alın",
+
+ heroLabel:"Türkiye · Birleşik Krallık",
+ heroT1:"BK vizeleri,", heroT2:"doğru hazırlanmış.",
+ heroLede:"Türkiye'deki müvekkiller için Türkçe ve İngilizce göçmenlik danışmanlığı.",
+ heroCta1:"Görüşme alın", heroCta2:"Hizmetleri görün",
+ panelLabel:"İlkemiz", panelQuote:"“Bir vize, sunulmadan önce kazanılır.”",
+ panelName:"IVT GLOBAL", panelRole:"İstanbul ve Londra",
+
+ lblAreas:"Hizmetler", areasH:"Çalıştığımız alanlar",
+ grp1:"Çalışma ve iş", grp2:"Aile ve eğitim", grp3:"BK'de kalmak",
+ a1h:"Skilled Worker", a1p:"Sağlık ve bakım dâhil, sponsorlu çalışma.",
+ a2h:"Sponsorluk lisansı", a2p:"Türkiye'den personel alan işverenler için.",
+ a3h:"Eş ve aile", a3p:"Eşler, nişanlılar, çocuklar ve ebeveynler.",
+ a4h:"Öğrenci", a4p:"Eğitim vizeleri ve Graduate yolu.",
+ a5h:"Ziyaretçi", a5p:"Turistik, aile ve iş ziyaretleri.",
+ a6h:"Global Talent", a6p:"Üstün kariyerler için onay süreci.",
+ a7h:"Innovator Founder", a7p:"Girişimini BK'ye taşıyan kurucular için.",
+ a8h:"Ankara Anlaşması", a8p:"ECAA sahipleri için uzatma ve yerleşim.",
+ a9h:"Yerleşim ve vatandaşlık", a9p:"Süresiz oturma izni ve vatandaşlık.",
+
+ lblApproach:"Yaklaşımımız", appH:"Üç sözümüz",
+ c1h:"İki kez kontrol", c1p:"Her dosya, sunulmadan önce ikinci bir danışman tarafından incelenir.",
+ c2h:"Önce dürüstlük", c2p:"Dosyanızın yalnızca güçlü değil, zayıf yanlarını da gösteririz.",
+ c3h:"Sabit ücret", c3p:"Başlamadan önce yazılı olarak belirlenir. Home Office harçları ayrı gösterilir.",
+
+ lblProcess:"Nasıl çalışırız", procH:"Dört aşama",
+ p1n:"Bir", p1h:"Görüşme", p1p:"Size uyan yolu belirleriz.",
+ p2n:"İki", p2h:"Belgeler", p2p:"Dosyanıza özel liste, tercümeler dâhil.",
+ p3n:"Üç", p3h:"Hazırlık", p3p:"Başvuruyu hazırlar ve kontrol ederiz.",
+ p4n:"Dört", p4h:"Sunum", p4p:"Başvuruyu sunar, karara kadar yanınızda kalırız.",
+
+ lblGuide:"Kısa rehber", gH:"Seçtiğiniz yolun şartları", gPick:"Bir yol seçin",
+ o1:"Skilled Worker", o2:"Eş veya partner", o3:"Öğrenci", o4:"Ziyaretçi",
+ gWhat:"Temel şartlar", gFoot:"Yalnızca genel bilgidir. Her dosya kendi koşullarına göre değerlendirilir.",
+
+ lblFees:"Ücretler", feesH:"Ücretlerimiz",
+ feesP:"Home Office harçları, sağlık katkı payı ve tercümeler ayrıdır.",
+ from:"başlangıç",
+ pl1k:"Danışmanlık", pl1h:"Görüşme",
+ pl1a:"Bir saat, Türkçe veya İngilizce", pl1b:"Yazılı öneri", pl1c:"Tam başvuru ücretinden düşülür",
+ pl2k:"En çok tercih edilen", pl2h:"Tam başvuru",
+ pl2a:"Eksiksiz belge dosyası", pl2b:"Hukuki beyan", pl2c:"İkinci danışman kontrolü", pl2d:"Sunum ve mülakat hazırlığı",
+ pl3k:"Kurumsal", pl3h:"Sponsorluk lisansı",
+ pl3a:"Lisans başvurusu", pl3b:"İK uyum sistemleri", pl3c:"Deneme denetimi",
+ plBook:"Randevu alın", plStart:"Başlayın", plTalk:"Bilgi alın",
+
+ lblVoices:"Müvekkiller", voicesH:"Kendi ifadeleriyle",
+ q1:"“Başvurmadan önce meslek kodumdaki sorunu fark ettiler. Başvurumu bu kurtardı.”", q1w:"E.D. · Hemşire · Ankara",
+ q2:"“Tek başıma bir kez reddedilmiştim. İkincisinde her şey Türkçe anlatıldı.”", q2w:"M.K. · Eş vizesi · İzmir",
+ q3:"“Sponsorluk lisansımızı tek bir ek bilgi talebi almadan aldık.”", q3w:"Lojistik şirketi · İstanbul",
+
+ lblFaq:"Sorular", faqH:"Aramadan önce",
+ f1q:"Onay garantisi verir misiniz?", f1a:"Hayır, kimse veremez — karar Home Office'e aittir. Bir dosyanın reddedileceğini düşünürsek, bizi görevlendirmeden önce söyleriz.",
+ f2q:"BK'ye gelmem gerekir mi?", f2a:"Hayır. Her şey görüntülü görüşme ve güvenli yüklemeyle yürür. Yalnızca Türkiye'deki biyometri randevusuna gidersiniz.",
+ f3q:"Daha önce reddedildim. Yeniden başvurabilir miyim?", f3a:"Genellikle evet, red bildirimini okuduktan sonra. Redlerin çoğu delil kaynaklıdır ve giderilebilir.",
+ f4q:"Ankara Anlaşması hâlâ açık mı?", f4a:"Yeni başvurulara kapalı. Hâlihazırda ECAA izniniz varsa uzatma ve yerleşim mümkündür.",
+ f5q:"Ne kadar sürer?", f5a:"Yola göre değişir ve Home Office süreleri sık güncellenir. Güncel süreyi görüşmenizde veririz.",
+
+ lblContact:"İletişim", conH:"Durumunuzu anlatın", conP:"Bir iş günü içinde dönüş yaparız.",
+ lName:"Ad soyad", phName:"Ad Soyad", lEmail:"E-posta", lPhone:"Telefon / WhatsApp",
+ lRoute:"Vize yolu", selPick:"Henüz emin değilim", lMsg:"Durumunuz",
+ phMsg:"Önceki başvurular, redler, süre kısıtları.",
+ lConsent:"IVT GLOBAL bu başvuru için benimle iletişime geçebilir.",
+ btnSend:"Gönder",
+ okSent:"Teşekkürler — bir iş günü içinde dönüş yapacağız.",
+ errFill:"Lütfen adınızı, geçerli bir e-posta adresini ve onayınızı ekleyin.",
+ offIst:"İstanbul", offLon:"Londra", offHours:"Çalışma saatleri",
+ offHoursV:"Pazartesi–Cuma, 09.00–18.00 (TSİ).",
+
+ fBrandP:"Türkiye'deki müvekkiller için BK göçmenlik danışmanlığı.",
+ fCol1:"Hizmetler", fCol3:"Hukuki",
+ fPrivacy:"Gizlilik bildirimi", fTerms:"Çalışma şartları", fComplaints:"Şikâyet",
+ notice:"OISC tarafından [NUMARA EKLEYİN] kayıt numarasıyla yetkilendirilmiştir. Buradaki hiçbir içerik kişisel dosyanıza dair danışmanlık değildir ve hiçbir sonuç garanti edilemez.",
+ title:"IVT GLOBAL — BK Göçmenlik Danışmanlığı",
+ desc:"Türkiye'deki müvekkiller için BK vize ve göçmenlik danışmanlığı. Çalışma, aile, eğitim, iş ve yerleşim."
+}};
+
+const GUIDE = {
+en:{
+ sw:{t:"Skilled Worker",l:["A job offer from a licensed UK sponsor","A salary meeting the threshold and going rate","English at B1","Maintenance funds, unless certified by your sponsor"]},
+ fam:{t:"Spouse or partner",l:["A genuine, subsisting relationship","Marriage, or two years living together","The financial requirement met","English at A1 for the first application"]},
+ stu:{t:"Student",l:["A CAS from a licensed sponsor","Fees and living costs held for 28 days","English at the level your sponsor requires","A credible study plan"]},
+ vis:{t:"Visitor",l:["A clear, genuine purpose and dates","Evidence you will leave at the end","Funds shown through real bank history","No activity that counts as work"]}
+},
+tr:{
+ sw:{t:"Skilled Worker",l:["Lisanslı bir BK sponsorundan iş teklifi","Eşiği ve piyasa ücretini karşılayan maaş","B1 düzeyinde İngilizce","Sponsor taahhüt etmiyorsa geçim fonu"]},
+ fam:{t:"Eş veya partner",l:["Gerçek ve süregelen bir ilişki","Evlilik ya da iki yıllık birlikte yaşam","Gelir şartının karşılanması","İlk başvuru için A1 İngilizce"]},
+ stu:{t:"Öğrenci",l:["Lisanslı sponsordan CAS belgesi","28 gün tutulmuş okul ve yaşam masrafı","Sponsorun istediği düzeyde İngilizce","İnandırıcı bir eğitim planı"]},
+ vis:{t:"Ziyaretçi",l:["Açık, gerçek bir amaç ve net tarihler","Süre sonunda ayrılacağınızın delili","Gerçek hesap geçmişiyle gösterilen kaynak","Çalışma sayılabilecek hiçbir faaliyet"]}
+}};
+
+/* ═══ LANGUAGE ═══════════════════════════════════════════ */
+let lang = "en";
+function setLang(next){
+  lang = I18N[next] ? next : "en";
+  const d = I18N[lang];
+  document.querySelectorAll("[data-i18n]").forEach(function(el){
+    const v = d[el.getAttribute("data-i18n")];
+    if(v !== undefined) el.textContent = v;
+  });
+  document.querySelectorAll("[data-ph]").forEach(function(el){
+    const v = d[el.getAttribute("data-ph")];
+    if(v !== undefined) el.setAttribute("placeholder", v);
+  });
+  document.documentElement.lang = lang;
+  document.title = d.title;
+  const md = document.querySelector('meta[name="description"]');
+  if(md) md.setAttribute("content", d.desc);
+  document.querySelectorAll(".lang button").forEach(function(b){
+    b.setAttribute("aria-pressed", String(b.dataset.lang === lang));
+  });
+  renderGuide();
+}
+document.querySelectorAll(".lang button").forEach(function(b){
+  b.addEventListener("click", function(){ setLang(b.dataset.lang); });
+});
+
+/* ═══ ROUTE GUIDE ════════════════════════════════════════ */
+let route = "sw";
+const resultEl = document.getElementById("result");
+function renderGuide(){
+  const s = GUIDE[lang][route];
+  resultEl.className = "result fade";
+  resultEl.innerHTML = '<span class="label">' + I18N[lang].gWhat + "</span><h4>" + s.t + "</h4><ul>" +
+    s.l.map(function(x){ return "<li>" + x + "</li>"; }).join("") +
+    '</ul><p class="foot">' + I18N[lang].gFoot + "</p>";
+}
+document.getElementById("opts").addEventListener("click", function(e){
+  const b = e.target.closest(".opt");
+  if(!b) return;
+  route = b.dataset.key;
+  this.querySelectorAll(".opt").forEach(function(o){ o.setAttribute("aria-pressed", String(o === b)); });
+  renderGuide();
+});
+
+/* ═══ NAV & DRAWER ═══════════════════════════════════════ */
+const nav = document.getElementById("nav");
+const burger = document.getElementById("burger");
+const drawer = document.getElementById("drawer");
+const scrim = document.getElementById("scrim");
+let scrollY = 0;
+
+window.addEventListener("scroll", function(){
+  nav.classList.toggle("scrolled", window.scrollY > 8);
+}, {passive:true});
+
+function openDrawer(){
+  scrollY = window.scrollY;
+  drawer.classList.add("open");
+  scrim.classList.add("on");
+  burger.setAttribute("aria-expanded","true");
+  document.body.classList.add("locked");
+  document.body.style.position = "fixed";
+  document.body.style.top = "-" + scrollY + "px";
+  document.body.style.width = "100%";
+}
+function closeDrawer(){
+  drawer.classList.remove("open");
+  scrim.classList.remove("on");
+  burger.setAttribute("aria-expanded","false");
+  document.body.classList.remove("locked");
+  document.body.style.position = "";
+  document.body.style.top = "";
+  document.body.style.width = "";
+  window.scrollTo(0, scrollY);
+}
+burger.addEventListener("click", function(){
+  drawer.classList.contains("open") ? closeDrawer() : openDrawer();
+});
+scrim.addEventListener("click", closeDrawer);
+window.addEventListener("resize", function(){
+  if(window.innerWidth >= 900 && drawer.classList.contains("open")) closeDrawer();
+}, {passive:true});
+document.getElementById("drawerClose").addEventListener("click", closeDrawer);
+drawer.querySelectorAll("a").forEach(function(a){ a.addEventListener("click", closeDrawer); });
+document.addEventListener("keydown", function(e){ if(e.key === "Escape" && drawer.classList.contains("open")) closeDrawer(); });
+
+/* ═══ REVEAL ═════════════════════════════════════════════ */
+const io = new IntersectionObserver(function(en){
+  en.forEach(function(x){ if(x.isIntersecting){ x.target.classList.add("in"); io.unobserve(x.target); } });
+}, {threshold:.08, rootMargin:"0px 0px -40px 0px"});
+document.querySelectorAll(".rv").forEach(function(el){ io.observe(el); });
+
+/* ═══ FAQ ════════════════════════════════════════════════ */
+const qas = document.querySelectorAll(".qa");
+qas.forEach(function(d){
+  d.addEventListener("toggle", function(){
+    if(d.open) qas.forEach(function(o){ if(o !== d) o.open = false; });
+  });
+});
+
+/* ═══ CLOCKS ═════════════════════════════════════════════ */
+function tick(){
+  const o = {hour:"2-digit", minute:"2-digit", hour12:false};
+  try{
+    document.getElementById("clkIst").textContent =
+      new Intl.DateTimeFormat("en-GB", Object.assign({timeZone:"Europe/Istanbul"}, o)).format(new Date());
+    document.getElementById("clkLon").textContent =
+      new Intl.DateTimeFormat("en-GB", Object.assign({timeZone:"Europe/London"}, o)).format(new Date());
+  }catch(err){}
+}
+tick(); setInterval(tick, 30000);
+
+/* ═══ FORM ═══════════════════════════════════════════════
+   The form is now WIRED. It works two ways:
+
+   1. If CONTACT.endpoint is set (Formspree, Getform, Basin,
+      your own API…), the form POSTs there in the background
+      and the visitor never leaves the page.
+   2. If it is left empty (the default), the form falls back
+      to opening the visitor's email app with everything
+      pre-filled, addressed to CONTACT.email. This works with
+      zero backend account — good enough to go live today.
+
+   ► To finalise: set CONTACT.email to your real inbox, and —
+     when you have one — paste a form endpoint into
+     CONTACT.endpoint. Keep the consent box: it is your GDPR
+     and KVKK record.                                        */
+const CONTACT = {
+  endpoint: "",                       // e.g. "https://formspree.io/f/xxxx" — leave "" to use email fallback
+  email: "istanbul@ivtglobal.com"     // EDIT: your real enquiry inbox
+};
+
+const form = document.getElementById("form");
+const sent = document.getElementById("sent");
+const sendBtn = form.querySelector('button[type="submit"]');
+
+function showSent(valid, msg){
+  sent.hidden = false;
+  sent.className = "sent";
+  sent.textContent = msg;
+  sent.style.background = valid ? "rgba(169,138,85,.10)" : "rgba(160,70,60,.09)";
+  sent.style.border = "1px solid " + (valid ? "rgba(169,138,85,.42)" : "rgba(160,70,60,.38)");
+  sent.style.color = valid ? "#5A4C27" : "#77382F";
+  sent.scrollIntoView({block:"nearest", behavior:"smooth"});
+}
+
+form.addEventListener("submit", async function(e){
+  e.preventDefault();
+  const name  = document.getElementById("n").value.trim();
+  const mail  = document.getElementById("e").value.trim();
+  const phone = document.getElementById("t").value.trim();
+  const route = document.getElementById("r").value;
+  const msg   = document.getElementById("m").value.trim();
+  const ok    = document.getElementById("c").checked;
+  const valid = name && ok && /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(mail);
+
+  if(!valid){ showSent(false, I18N[lang].errFill); return; }
+
+  // 1 — background POST to a form endpoint, if configured
+  if(CONTACT.endpoint){
+    const original = sendBtn.textContent;
+    sendBtn.disabled = true;
+    sendBtn.textContent = "…";
+    try{
+      const res = await fetch(CONTACT.endpoint, {
+        method: "POST",
+        headers: { "Accept": "application/json" },
+        body: new FormData(form)
+      });
+      if(!res.ok) throw new Error(res.status);
+      form.reset();
+      showSent(true, I18N[lang].okSent);
+    }catch(err){
+      showSent(false, I18N[lang].errFill);
+    }finally{
+      sendBtn.disabled = false;
+      sendBtn.textContent = original;
+    }
+    return;
+  }
+
+  // 2 — no endpoint: hand off to the visitor's email app, pre-filled
+  const subject = "Consultation enquiry — " + name + (route ? " (" + route + ")" : "");
+  const body =
+    "Name: " + name + "\n" +
+    "Email: " + mail + "\n" +
+    "Phone / WhatsApp: " + (phone || "—") + "\n" +
+    "Route: " + (route || "—") + "\n\n" +
+    "Situation:\n" + (msg || "—");
+  window.location.href = "mailto:" + CONTACT.email +
+    "?subject=" + encodeURIComponent(subject) +
+    "&body="    + encodeURIComponent(body);
+  form.reset();
+  showSent(true, I18N[lang].okSent);
+});
+
+document.getElementById("yr").textContent = new Date().getFullYear();
+setLang((navigator.language || "").toLowerCase().indexOf("tr") === 0 ? "tr" : "en");
+})();
+</script>
+</body>
+</html>
