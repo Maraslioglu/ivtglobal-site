@@ -716,11 +716,11 @@ footer{background:var(--forest);color:#93A299;padding-block:var(--s-7) var(--s-5
     <div class="contact rv">
       <form class="form-card" id="form" novalidate>
         <div class="f-row">
-          <div class="f"><label for="n" data-i18n="lName">Name</label><input id="n" name="name" autocomplete="name" data-ph="phName" placeholder="Ad Soyad"></div>
-          <div class="f"><label for="e" data-i18n="lEmail">Email</label><input id="e" name="email" type="email" inputmode="email" autocomplete="email" placeholder="you@email.com"></div>
+          <div class="f"><label for="n" data-i18n="lName">Name</label><input id="n" name="name" autocomplete="name" data-ph="phName" placeholder="Full name"></div>
+          <div class="f"><label for="e" data-i18n="lEmail">Email</label><input id="e" name="email" type="email" inputmode="email" autocomplete="email" data-ph="phEmail" placeholder="you@email.com"></div>
         </div>
         <div class="f-row">
-          <div class="f"><label for="t" data-i18n="lPhone">Phone / WhatsApp</label><input id="t" name="phone" type="tel" inputmode="tel" autocomplete="tel" placeholder="+90 5xx xxx xx xx"></div>
+          <div class="f"><label for="t" data-i18n="lPhone">Phone / WhatsApp</label><input id="t" name="phone" type="tel" inputmode="tel" autocomplete="tel" data-ph="phPhone" placeholder="+90 5xx xxx xx xx"></div>
           <div class="f"><label for="r" data-i18n="lRoute">Route</label>
             <select id="r" name="route">
               <option data-i18n="selPick">Not sure yet</option>
@@ -871,7 +871,7 @@ en:{
  f5q:"How long does it take?", f5a:"It depends on the route, and Home Office timescales change often. We give you the current figure at your consultation.",
 
  lblContact:"Contact", conH:"Tell us your situation", conP:"We reply within one working day.",
- lName:"Name", phName:"Ad Soyad", lEmail:"Email", lPhone:"Phone / WhatsApp",
+ lName:"Name", phName:"Full name", phEmail:"you@email.com", phPhone:"+90 5xx xxx xx xx", lEmail:"Email", lPhone:"Phone / WhatsApp",
  lRoute:"Route", selPick:"Not sure yet", lMsg:"Your situation",
  phMsg:"Previous applications, refusals, deadlines.",
  lConsent:"IVT GLOBAL may contact me about this enquiry.",
@@ -951,7 +951,7 @@ tr:{
  f5q:"Ne kadar sürer?", f5a:"Yola göre değişir ve Home Office süreleri sık güncellenir. Güncel süreyi görüşmenizde veririz.",
 
  lblContact:"İletişim", conH:"Durumunuzu anlatın", conP:"Bir iş günü içinde dönüş yaparız.",
- lName:"Ad soyad", phName:"Ad Soyad", lEmail:"E-posta", lPhone:"Telefon / WhatsApp",
+ lName:"Ad soyad", phName:"Ad Soyad", phEmail:"ornek@eposta.com", phPhone:"+90 5xx xxx xx xx", lEmail:"E-posta", lPhone:"Telefon / WhatsApp",
  lRoute:"Vize yolu", selPick:"Henüz emin değilim", lMsg:"Durumunuz",
  phMsg:"Önceki başvurular, redler, süre kısıtları.",
  lConsent:"IVT GLOBAL bu başvuru için benimle iletişime geçebilir.",
